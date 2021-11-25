@@ -28,7 +28,7 @@ export const products = [
     id: 4,
     name: 'Xiomi Super Fast',
     price: 500,
-    description: ''
+    description: 'Este é um ótimo Celular!!!'
   }
 ];
 

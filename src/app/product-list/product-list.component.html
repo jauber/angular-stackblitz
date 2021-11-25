@@ -2,8 +2,25 @@
 
 <div *ngFor="let product of products">
   <h3>
-    {{ product.name }}
+    <a [title]="product.name + ' (detalhes)'"
+       [routerLink]="['/products', product.id]"> {{ product.name }} </a>
   </h3>
+  <!-- Descrição do produto -->
+  <p *ngIf="product.description">
+    Descrição: {{ product.description }}
+  </p>
+  <!-- Botao para compartilhar -->
+  <button (click)="share()">
+    Compartilhar
+  </button>
+  <!-- Irá aparecer o alerta se entrar nas condições do componente -->
+  <app-product-alerts 
+    [product]="product"
+    (notify)="onNotify()">
+  </app-product-alerts>
+  <!-- <button (click)="paraConsole( product.name )">
+    Para o Console
+  </button> -->
 </div>
 
 <!-- 
